@@ -34,13 +34,13 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
-### Security
+### SecurityApp
 
 If you discover any security related issues, please email lensig13@gmail.com instead of using the issue tracker.
 
 ## Credits
 
--   [Lennon Mudenda](https://github.com/alimwa)
+-   [Lennon Mudenda](https://github.com/lennon-mudenda)
 -   [All Contributors](../../contributors)
 
 ## License
