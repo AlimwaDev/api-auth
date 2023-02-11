@@ -17,7 +17,8 @@ class AuthServiceProvider extends ServiceProvider
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'auth');
         // $this->loadViewsFrom(__DIR__.'/../resources/views', 'auth');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        // $this->loadRoutesFrom(__DIR__.'/routes.php');
+
+		$this->loadRoutesFrom(__DIR__.'/routes/api.php');
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
@@ -53,7 +54,7 @@ class AuthServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'auth');
 
         // Register the main class to use with the facade
-        $this->app->singleton('auth', function () {
+        $this->app->singleton('alimwa_auth', function () {
             return new Auth;
         });
     }

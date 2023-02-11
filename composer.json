@@ -1,9 +1,10 @@
 {
     "name": "alimwa/auth",
-    "description": "A simple package that exposes an API for authentication.",
+    "description": "A simple package that exposes endpoints for Token Based API authentication.",
     "keywords": [
         "alimwa",
-        "auth"
+        "auth",
+        "api"
     ],
     "homepage": "https://github.com/alimwa/auth",
     "license": "MIT",
@@ -47,7 +48,7 @@
                 "Alimwa\\Auth\\AuthServiceProvider"
             ],
             "aliases": {
-                "Auth": "Alimwa\\Auth\\AuthFacade"
+                "AlimwaAuth": "Alimwa\\Auth\\AuthFacade"
             }
         }
     }

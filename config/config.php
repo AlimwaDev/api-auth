@@ -1,8 +1,10 @@
 <?php
 
 /*
- * You can place your custom package configuration in here.
+ * Auth Config
  */
 return [
-
+	'tokens' => [
+		'name' => 'API_AUTH_TOKEN',
+	],
 ];
