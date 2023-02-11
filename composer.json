@@ -3,7 +3,8 @@
     "description": "A simple package that exposes an API for authentication.",
     "keywords": [
         "alimwa",
-        "auth"
+        "auth",
+        "api"
     ],
     "homepage": "https://github.com/alimwa/auth",
     "license": "MIT",
@@ -47,7 +48,7 @@
                 "Alimwa\\Auth\\AuthServiceProvider"
             ],
             "aliases": {
-                "Auth": "Alimwa\\Auth\\AuthFacade"
+                "AlimwaAuth": "Alimwa\\Auth\\AuthFacade"
             }
         }
     }
