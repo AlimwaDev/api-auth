@@ -1,5 +1,5 @@
 {
-    "name": "alimwa/auth",
+    "name": "alimwa/api-auth",
     "description": "A simple package that exposes endpoints for Token Based API authentication.",
     "keywords": [
         "alimwa",
