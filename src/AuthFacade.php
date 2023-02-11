@@ -16,6 +16,6 @@ class AuthFacade extends Facade
      */
     protected static function getFacadeAccessor(): string
     {
-        return 'auth';
+        return 'alimwa_auth';
     }
 }
