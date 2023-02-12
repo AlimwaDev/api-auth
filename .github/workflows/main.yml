@@ -16,11 +16,6 @@ jobs:
                 php: [8.1]
                 laravel: [9.*]
                 stability: [prefer-lowest, prefer-stable]
-                include:
-                    - laravel: 9.*
-                      sanctum: ^3.0
-                      testbench: ^7.0
-                      phpunit: ^9.0
 
         name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.stability }} - ${{ matrix.os }}
 
@@ -41,10 +36,6 @@ jobs:
                   echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
             - name: Install dependencies
               run: |
-                  composer require "laravel/framework:${{ matrix.laravel }}" --no-interaction --no-update
-                  composer require "laravel/sanctum:${{ matrix.sanctum }}" --no-interaction --no-update
-                  composer require "orchestra/testbench:${{ matrix.testbench }}" --dev --no-interaction --no-update
-                  composer require "phpunit/phpunit:${{ matrix.phpunit }}" --dev --no-interaction --no-update
-                  composer update --${{ matrix.stability }} --prefer-dist --no-interaction
+                  composer install --${{ matrix.stability }} --prefer-dist --no-interaction
             - name: Execute tests
               run: composer test
