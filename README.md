@@ -1,11 +1,16 @@
 # Alimwa API Auth
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/alimwa/api-auth.svg?style=flat-square)](https://packagist.org/packages/alimwa/auth)
-[![Total Downloads](https://img.shields.io/packagist/dt/alimwa/api-auth.svg?style=flat-square)](https://packagist.org/packages/alimwa/auth)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/alimwa/api-auth.svg?style=flat-square)](https://packagist.org/packages/alimwa/api-auth)
+[![Total Downloads](https://img.shields.io/packagist/dt/alimwa/api-auth.svg?style=flat-square)](https://packagist.org/packages/alimwa/api-auth)
 ![GitHub Actions](https://github.com/AlimwaDev/api-auth/actions/workflows/main.yml/badge.svg)
 
-Thanks to Taylor the majority of use who do 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+Thanks to Taylor the majority of use who handle API based authentication and authorisation now have it easy and 
+through the sanctum package. However, the package only allows for the management of access tokens and the permissions 
+on them which is why after implementing authentication endpoints based of off sanctum I have decided like any other dev
+to create my own package that I aim to use throughout all my APIs. 
+
+I am to start by supporting the latest version of Laravel and then creating other version to add support for more. I will
+be following the PSR12 standard for those who wish to contribute and help maintain this package.
 
 ## Installation
 
