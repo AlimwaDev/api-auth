@@ -17,7 +17,7 @@
         }
     ],
     "require": {
-        "php": "^7.4|^8.0",
+        "php": "^8.0",
         "illuminate/support": "^9.37",
         "laravel/sanctum": "^3.0"
     },
