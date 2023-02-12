@@ -1,8 +1,8 @@
 # Alimwa API Auth
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/alimwa/auth.svg?style=flat-square)](https://packagist.org/packages/alimwa/auth)
-[![Total Downloads](https://img.shields.io/packagist/dt/alimwa/auth.svg?style=flat-square)](https://packagist.org/packages/alimwa/auth)
-![GitHub Actions](https://github.com/alimwa/auth/actions/workflows/main.yml/badge.svg)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/alimwa/api-auth.svg?style=flat-square)](https://packagist.org/packages/alimwa/auth)
+[![Total Downloads](https://img.shields.io/packagist/dt/alimwa/api-auth.svg?style=flat-square)](https://packagist.org/packages/alimwa/auth)
+![GitHub Actions](https://github.com/AlimwaDev/api-auth/actions/workflows/main.yml/badge.svg)
 
 Thanks to Taylor the majority of use who do 
 This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
