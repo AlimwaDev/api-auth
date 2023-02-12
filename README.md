@@ -20,11 +20,30 @@ You can install the package via composer:
 composer require alimwa/auth
 ```
 
+## Configuration
+
+Once the package is installed you may run the following command to publish Sanctum bases resources.
+
+```bash
+php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+```
+
+Then migrate the database if it hasn't been already.
+```bash
+php artisan migrate
+```
+
+
 ## Usage
 
-```php
-// Usage description here
+Once the package is installed you may run the following command view your new routes that you can access from SPAs 
+and Mobile Apps.
+
+```bash
+php artisan route:list
 ```
+
+Migrate 
 
 ### Testing
 
