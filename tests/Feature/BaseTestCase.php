@@ -2,8 +2,8 @@
 
 namespace Alimwa\Auth\Tests\Feature;
 
-use Alimwa\Auth\app\Models\User;
 use Orchestra\Testbench\TestCase;
+use Illuminate\Support\Facades\App;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 use Alimwa\Auth\Tests\Traits\HasAuthUser;
@@ -17,7 +17,9 @@ class BaseTestCase extends TestCase
     {
         parent::setUp();
 
-		User::factory()->create();
+		$userModel = App::make(config('alimwa-api-auth.model'));
+
+		$userModel::factory()->create();
     }
 
 	/**
