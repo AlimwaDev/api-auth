@@ -13,13 +13,13 @@ class AuthAPITest extends BaseTestCase
      *
      * @return void
      */
-    public function test_login_success()
+    public function test_login_success(): void
     {
 		$validCredentials = APIAuthTestConfiguration::validLoginCredentials();
 
 		foreach ($validCredentials as $credential) {
 			$response = $this->postJson(
-				'/api/auth/login',
+				$this->getFullAPIEndpoint('/login'),
 				$credential
 			);
 
@@ -32,13 +32,13 @@ class AuthAPITest extends BaseTestCase
      *
      * @return void
      */
-    public function test_login_failure()
+    public function test_login_failure(): void
     {
 		$invalidCredentials = APIAuthTestConfiguration::invalidLoginCredentials();
 
 		foreach ($invalidCredentials as $credential) {
 			$response = $this->postJson(
-				'/api/auth/login',
+				$this->getFullAPIEndpoint('/login'),
 				$credential
 			);
 
@@ -55,9 +55,9 @@ class AuthAPITest extends BaseTestCase
 	 *
 	 * @return void
 	 */
-	public function test_refresh_success()
+	public function test_refresh_success(): void
 	{
-		$response = $this->withAuthUser()->getJson('/api/auth/refresh');
+		$response = $this->withAuthUser()->getJson($this->getFullAPIEndpoint('/refresh'));
 
 		$response->assertStatus(201);
 	}
@@ -67,13 +67,13 @@ class AuthAPITest extends BaseTestCase
 	 *
 	 * @return void
 	 */
-	public function test_refresh_failure()
+	public function test_refresh_failure(): void
 	{
-		$response = $this->getJson('/api/auth/refresh');
+		$response = $this->getJson($this->getFullAPIEndpoint('/refresh'));
 
 		$response->assertStatus(401);
 
-		$response = $this->withToken(Str::random(32))->getJson('/api/auth/refresh');
+		$response = $this->withToken(Str::random(32))->getJson($this->getFullAPIEndpoint('/refresh'));
 
 		$response->assertStatus(401);
 	}
@@ -83,9 +83,9 @@ class AuthAPITest extends BaseTestCase
 	 *
 	 * @return void
 	 */
-	public function test_get_user_success()
+	public function test_get_user_success(): void
 	{
-		$response = $this->withAuthUser()->getJson('/api/auth/user');
+		$response = $this->withAuthUser()->getJson($this->getFullAPIEndpoint('/user'));
 
 		$response->assertStatus(201);
 	}
@@ -95,13 +95,13 @@ class AuthAPITest extends BaseTestCase
 	 *
 	 * @return void
 	 */
-	public function test_get_user_failure()
+	public function test_get_user_failure(): void
 	{
-		$response = $this->getJson('/api/auth/user');
+		$response = $this->getJson($this->getFullAPIEndpoint('/user'));
 
 		$response->assertStatus(401);
 
-		$response = $this->withToken(Str::random(32))->getJson('/api/auth/user');
+		$response = $this->withToken(Str::random(32))->getJson($this->getFullAPIEndpoint('/user'));
 
 		$response->assertStatus(401);
 	}
@@ -111,9 +111,9 @@ class AuthAPITest extends BaseTestCase
 	 *
 	 * @return void
 	 */
-	public function test_logout_success()
+	public function test_logout_success(): void
 	{
-		$response = $this->withAuthUser()->getJson('/api/auth/logout');
+		$response = $this->withAuthUser()->getJson($this->getFullAPIEndpoint('/logout'));
 
 		$response->assertStatus(201);
 	}
@@ -123,13 +123,13 @@ class AuthAPITest extends BaseTestCase
 	 *
 	 * @return void
 	 */
-	public function test_logout_failure()
+	public function test_logout_failure(): void
 	{
-		$response = $this->getJson('/api/auth/logout');
+		$response = $this->getJson($this->getFullAPIEndpoint('/logout'));
 
 		$response->assertStatus(401);
 
-		$response = $this->withToken(Str::random(32))->getJson('/api/auth/logout');
+		$response = $this->withToken(Str::random(32))->getJson($this->getFullAPIEndpoint('/logout'));
 
 		$response->assertStatus(401);
 	}

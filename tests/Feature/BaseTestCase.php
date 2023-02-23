@@ -6,13 +6,16 @@ use Orchestra\Testbench\TestCase;
 use Illuminate\Support\Facades\App;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
+use Alimwa\Auth\Tests\Traits\HasAPIURL;
 use Alimwa\Auth\Tests\Traits\HasAuthUser;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class BaseTestCase extends TestCase
 {
+	use HasAPIURL;
 	use HasAuthUser;
 	use RefreshDatabase;
+
     public function setUp(): void
     {
         parent::setUp();

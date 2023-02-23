@@ -11,4 +11,5 @@ return [
 		'name' => 'API_AUTH_TOKEN',
 	],
 	'model' => User::class,
+	'apiVersion' => 'v1',
 ];
