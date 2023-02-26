@@ -55,6 +55,8 @@ class AuthServiceProvider extends ServiceProvider
         // Automatically apply the package configuration
         $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'alimwa-api-auth');
 
+        $this->mergeConfigFrom(__DIR__.'/../config/l5-swagger.php', 'l5-swagger');
+
         // Register the main class to use with the facade
         $this->app->singleton('alimwa_auth', static function () {
             return new Auth();
