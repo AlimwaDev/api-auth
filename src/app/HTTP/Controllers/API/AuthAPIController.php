@@ -40,7 +40,7 @@ class AuthAPIController extends Controller
      *              @OA\Property(
      *                  property="errors",
      *                  type="array",
-     *                  @OA\Items(type=string)
+     *                  @OA\Items(type="string")
      *              ),
      *              @OA\Property(
      *                  property="data",
@@ -79,7 +79,7 @@ class AuthAPIController extends Controller
      *              @OA\Property(
      *                  property="errors",
      *                  type="array",
-     *                  @OA\Items(type=string)
+     *                  @OA\Items(type="string")
      *              ),
      *              @OA\Property(
      *                  property="data",
@@ -119,7 +119,7 @@ class AuthAPIController extends Controller
      *              @OA\Property(
      *                  property="errors",
      *                  type="array"
-     *                  @OA\Items(type=string)
+     *                  @OA\Items(type="string")
      *              ),
      *              @OA\Property(
      *                  property="data",
@@ -159,7 +159,7 @@ class AuthAPIController extends Controller
      *              @OA\Property(
      *                  property="errors",
      *                  type="array",
-     *                  @OA\Items(type=string)
+     *                  @OA\Items(type="string")
      *              ),
      *              @OA\Property(
      *                  property="data",
