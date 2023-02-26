@@ -40,4 +40,6 @@ jobs:
             - name: Execute tests
               run: composer test
             - name: Run Static Code Analysis
-              run: composer phpstan
+              run: |
+                  composer phpstan
+                  composer phpinsights

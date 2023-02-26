@@ -2,7 +2,6 @@
 
 namespace Alimwa\Auth\app\HTTP\Actions\AuthAPI;
 
-use Alimwa\Auth\app\Models\User;
 use Illuminate\Support\Facades\App;
 use Alimwa\Auth\app\HTTP\Actions\BaseAPIAction;
 use Illuminate\Support\Facades\Auth as LaravelAuth;
@@ -14,20 +13,20 @@ class LoginAction extends BaseAPIAction
     {
         $credentials = $request->validated();
 
-        if(LaravelAuth::attempt($credentials)) {
-			$userModel = App::make(config('alimwa-api-auth.model'));
+        if (LaravelAuth::attempt($credentials)) {
+            $userModel = App::make(config('alimwa-api-auth.model'));
 
-			$user = $userModel::find(request()->user()->getAuthIdentifier());
+            $user = $userModel::find(request()->user()->getAuthIdentifier());
 
-			$user->tokens()->delete();
+            $user->tokens()->delete();
 
-			$token = $user->createToken(config('alimwa-api-auth.tokens.name'));
+            $token = $user->createToken(config('alimwa-api-auth.tokens.name'));
 
             $this->result['data'] = [
                 'token' => $token->plainTextToken,
-				'user' => $user->toArray(),
+                'user' => $user->toArray(),
             ];
-        } else  {
+        } else {
             $this->result['message'] = 'Invalid Credentials';
 
             $this->code = 401;
