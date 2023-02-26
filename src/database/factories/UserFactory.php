@@ -13,7 +13,7 @@ class UserFactory extends Factory
      *
      * @var string
      */
-    protected $model = User::class;
+    protected $model = User::class; // @phpstan-ignore-line
 
     /**
      * Define the model's default state.
@@ -38,7 +38,7 @@ class UserFactory extends Factory
      */
     public function unverified(): Factory
     {
-        return $this->state(function (array $attributes) {
+        return $this->state(static function (array $attributes) {
             return [
                 'email_verified_at' => null,
             ];

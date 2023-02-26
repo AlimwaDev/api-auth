@@ -9,11 +9,11 @@ class UserAction extends BaseAPIAction
 {
     public function execute(): self
     {
-		$userModel = App::make(config('alimwa-api-auth.model'));
+        $userModel = App::make(config('alimwa-api-auth.model'));
 
-		$this->result['data'] = [
-			'user' => $userModel::find(request()->user()->getAuthIdentifier())->toArray(),
-		];
+        $this->result['data'] = [
+            'user' => $userModel::find(request()->user()->getAuthIdentifier())->toArray(),
+        ];
         return $this;
     }
 }

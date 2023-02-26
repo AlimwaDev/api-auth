@@ -39,3 +39,7 @@ jobs:
                   composer install --no-interaction
             - name: Execute tests
               run: composer test
+            - name: Run Static Code Analysis
+              run: |
+                  composer phpstan
+                  composer phpinsights

@@ -62,15 +62,15 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  */
 class User extends Authenticatable
 {
-	use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable;
 
-	/**
-	 * Create a new factory instance for the model.
-	 *
-	 * @return Factory
-	 */
-	protected static function newFactory(): Factory
-	{
-		return new UserFactory();
-	}
+    /**
+     * Create a new factory instance for the model.
+     *
+     * @return Factory
+     */
+    protected static function newFactory(): Factory
+    {
+        return new UserFactory();
+    }
 }

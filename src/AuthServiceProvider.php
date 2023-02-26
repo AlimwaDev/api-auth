@@ -8,8 +8,9 @@ class AuthServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
+     * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         /*
          * Optional methods to load your package assets
@@ -18,7 +19,7 @@ class AuthServiceProvider extends ServiceProvider
         // $this->loadViewsFrom(__DIR__.'/../resources/views', 'auth');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
-		$this->loadRoutesFrom(__DIR__.'/routes/api.php');
+        $this->loadRoutesFrom(__DIR__.'/routes/api.php');
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
@@ -47,15 +48,16 @@ class AuthServiceProvider extends ServiceProvider
 
     /**
      * Register the application services.
+     * @return void
      */
-    public function register()
+    public function register(): void
     {
         // Automatically apply the package configuration
         $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'alimwa-api-auth');
 
         // Register the main class to use with the facade
-        $this->app->singleton('alimwa_auth', function () {
-            return new Auth;
+        $this->app->singleton('alimwa_auth', static function () {
+            return new Auth();
         });
     }
 }
