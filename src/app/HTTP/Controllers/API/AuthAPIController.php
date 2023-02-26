@@ -39,7 +39,8 @@ class AuthAPIController extends Controller
      *              type="object",
      *              @OA\Property(
      *                  property="errors",
-     *                  type="array"
+     *                  type="array",
+     *                  @OA\Items(type=string)
      *              ),
      *              @OA\Property(
      *                  property="data",
@@ -50,7 +51,11 @@ class AuthAPIController extends Controller
      *                  type="string"
      *              )
      *          )
-     *      )
+     *      ),
+     *     @OA\Response(
+     *          response=422,
+     *          description="Invalid Input"
+     *     )
      * )
      */
     public function login(LoginAction $loginAction, LoginRequest $request): JsonResponse
@@ -65,6 +70,7 @@ class AuthAPIController extends Controller
      *      summary="logoutUser",
      *      tags={"API Auth"},
      *      description="Logs out authenticated user.",
+     *     security={{"sanctum":{}}},
      *      @OA\Response(
      *          response=200,
      *          description="successful operation",
@@ -72,7 +78,8 @@ class AuthAPIController extends Controller
      *              type="object",
      *              @OA\Property(
      *                  property="errors",
-     *                  type="array"
+     *                  type="array",
+     *                  @OA\Items(type=string)
      *              ),
      *              @OA\Property(
      *                  property="data",
@@ -84,7 +91,11 @@ class AuthAPIController extends Controller
      *                  type="string"
      *              )
      *          )
-     *      )
+     *      ),
+     *     @OA\Response(
+     *          response=401,
+     *          description="Not Authorized"
+     *     )
      * )
      */
     public function logout(LogoutAction $logoutAction): JsonResponse
@@ -99,6 +110,7 @@ class AuthAPIController extends Controller
      *      summary="refreshUserToken",
      *      tags={"API Auth"},
      *      description="Refreshes the authenticated user's token",
+     *     security={{"sanctum":{}}},
      *      @OA\Response(
      *          response=200,
      *          description="successful operation",
@@ -107,6 +119,7 @@ class AuthAPIController extends Controller
      *              @OA\Property(
      *                  property="errors",
      *                  type="array"
+     *                  @OA\Items(type=string)
      *              ),
      *              @OA\Property(
      *                  property="data",
@@ -118,7 +131,11 @@ class AuthAPIController extends Controller
      *                  type="string"
      *              )
      *          )
-     *      )
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Not Authorized"
+     *     )
      * )
      */
     public function refresh(RefreshAction $refreshAction): JsonResponse
@@ -133,6 +150,7 @@ class AuthAPIController extends Controller
      *      summary="loggedInUser",
      *      tags={"API Auth"},
      *      description="Get data on the currently logged in user.",
+     *     security={{"sanctum":{}}},
      *      @OA\Response(
      *          response=200,
      *          description="successful operation",
@@ -140,7 +158,8 @@ class AuthAPIController extends Controller
      *              type="object",
      *              @OA\Property(
      *                  property="errors",
-     *                  type="array"
+     *                  type="array",
+     *                  @OA\Items(type=string)
      *              ),
      *              @OA\Property(
      *                  property="data",
@@ -152,7 +171,11 @@ class AuthAPIController extends Controller
      *                  type="string"
      *              )
      *          )
-     *      )
+     *      ),
+     *     @OA\Response(
+     *          response=401,
+     *          description="Not Authorized"
+     *     )
      * )
      */
     public function user(UserAction $userAction): JsonResponse
