@@ -17,7 +17,7 @@ be following the PSR12 standard for those who wish to contribute and help mainta
 You can install the package via composer:
 
 ```bash
-composer require alimwa/auth
+composer require alimwa/api-auth
 ```
 
 ## Configuration
