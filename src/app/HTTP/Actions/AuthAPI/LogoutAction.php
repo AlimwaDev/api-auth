@@ -8,7 +8,7 @@ class LogoutAction extends BaseAPIAction
 {
     public function execute(): self
     {
-        request()->user()->currentAccessToken()->delete();
+        request()->user()->currentAccessToken()->delete(); // @phpstan-ignore-line
         return $this;
     }
 }

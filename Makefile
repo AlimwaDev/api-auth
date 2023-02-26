@@ -6,3 +6,6 @@ run\:coverage:
 
 routes:
 	php ./vendor/bin/testbench route:list
+
+run\:quality\:phpstan:
+	./vendor/bin/phpstan analyse --memory-limit=2G --xdebug

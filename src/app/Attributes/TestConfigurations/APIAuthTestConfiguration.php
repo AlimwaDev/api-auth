@@ -14,7 +14,7 @@ class APIAuthTestConfiguration
 	{
 		return [
 			[
-				'email' => User::first()->email,
+				'email' => User::first()->email, // @phpstan-ignore-line
 				'password' => 'password',
 			],
 		];
@@ -27,7 +27,7 @@ class APIAuthTestConfiguration
 	{
 		return [
 			[
-				'email' => User::first()->email,
+				'email' => User::first()->email, // @phpstan-ignore-line
 				'password' => Str::random(8),
 			],
 			[

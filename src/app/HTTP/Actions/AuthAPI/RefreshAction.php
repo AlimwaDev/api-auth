@@ -13,9 +13,9 @@ class RefreshAction extends BaseAPIAction
 
         $user = request()->user();
 
-        $user->currentAccessToken()->delete();
+        $user->currentAccessToken()->delete(); // @phpstan-ignore-line
 
-        $token =  $user->createToken(config('alimwa-api-auth.tokens.name'));
+        $token =  $user->createToken(config('alimwa-api-auth.tokens.name')); // @phpstan-ignore-line
 
         $this->result['data'] = [
             'token' => $token->plainTextToken,

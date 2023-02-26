@@ -13,7 +13,7 @@ class UserFactory extends Factory
      *
      * @var string
      */
-    protected $model = User::class;
+    protected $model = User::class; // @phpstan-ignore-line
 
     /**
      * Define the model's default state.
