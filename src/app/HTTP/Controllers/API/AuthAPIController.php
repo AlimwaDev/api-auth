@@ -14,9 +14,9 @@ class AuthAPIController extends Controller
 {
     /**
      * @OA\Post(
-     *      path="/login",
+     *      path="/auth/login",
      *      summary="loginUser",
-     *      tags={"API Auth"},
+     *      tags={"Auth"},
      *      description="Login user on API and receive token for subsequent requests.",
      *      @OA\RequestBody(
      *        required=true,
@@ -66,9 +66,9 @@ class AuthAPIController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/logout",
+     *      path="/auth/logout",
      *      summary="logoutUser",
-     *      tags={"API Auth"},
+     *      tags={"Auth"},
      *      description="Logs out authenticated user.",
      *     	security={{"sanctum":{}}},
      *      @OA\Response(
@@ -106,9 +106,9 @@ class AuthAPIController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/refresh",
+     *      path="/auth/refresh",
      *      summary="refreshUserToken",
-     *      tags={"API Auth"},
+     *      tags={"Auth"},
      *      description="Refreshes the authenticated user's token",
      *     	security={{"sanctum":{}}},
      *      @OA\Response(
@@ -146,9 +146,9 @@ class AuthAPIController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/user",
+     *      path="/auth/user",
      *      summary="loggedInUser",
-     *      tags={"API Auth"},
+     *      tags={"Auth"},
      *      description="Get data on the currently logged in user.",
      *     	security={{"sanctum":{}}},
      *      @OA\Response(
