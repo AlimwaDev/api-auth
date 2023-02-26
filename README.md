@@ -17,14 +17,33 @@ be following the PSR12 standard for those who wish to contribute and help mainta
 You can install the package via composer:
 
 ```bash
-composer require alimwa/auth
+composer require alimwa/api-auth
 ```
+
+## Configuration
+
+Once the package is installed you may run the following command to publish Sanctum bases resources.
+
+```bash
+php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+```
+
+Then migrate the database if it hasn't been already.
+```bash
+php artisan migrate
+```
+
 
 ## Usage
 
-```php
-// Usage description here
+Once the package is installed you may run the following command view your new routes that you can access from SPAs 
+and Mobile Apps.
+
+```bash
+php artisan route:list
 ```
+
+Migrate 
 
 ### Testing
 
