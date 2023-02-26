@@ -70,7 +70,7 @@ class AuthAPIController extends Controller
      *      summary="logoutUser",
      *      tags={"API Auth"},
      *      description="Logs out authenticated user.",
-     *     security={{"sanctum":{}}},
+     *     	security={{"sanctum":{}}},
      *      @OA\Response(
      *          response=200,
      *          description="successful operation",
@@ -110,7 +110,7 @@ class AuthAPIController extends Controller
      *      summary="refreshUserToken",
      *      tags={"API Auth"},
      *      description="Refreshes the authenticated user's token",
-     *     security={{"sanctum":{}}},
+     *     	security={{"sanctum":{}}},
      *      @OA\Response(
      *          response=200,
      *          description="successful operation",
@@ -118,7 +118,7 @@ class AuthAPIController extends Controller
      *              type="object",
      *              @OA\Property(
      *                  property="errors",
-     *                  type="array"
+     *                  type="array",
      *                  @OA\Items(type="string")
      *              ),
      *              @OA\Property(
@@ -150,7 +150,7 @@ class AuthAPIController extends Controller
      *      summary="loggedInUser",
      *      tags={"API Auth"},
      *      description="Get data on the currently logged in user.",
-     *     security={{"sanctum":{}}},
+     *     	security={{"sanctum":{}}},
      *      @OA\Response(
      *          response=200,
      *          description="successful operation",
