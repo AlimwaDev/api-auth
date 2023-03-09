@@ -10,15 +10,16 @@ abstract class BaseAPIAction
      * @var array $result
      */
     protected array $result = [
+        'success' => true,
         'data' => [],
-        'message' => null,
-        'errors' => []
+        'message' => '',
+        'errors' => [],
     ];
 
     /**
      * @var int $code
      */
-    protected int $code = 201;
+    protected int $code = 200;
 
     /**
      * Returns the response from executing the action

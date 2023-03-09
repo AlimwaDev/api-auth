@@ -9,6 +9,9 @@ class LogoutAction extends BaseAPIAction
     public function execute(): self
     {
         request()->user()->currentAccessToken()->delete(); // @phpstan-ignore-line
+
+        $this->result['message'] = 'User Logged Out Successfully';
+
         return $this;
     }
 }

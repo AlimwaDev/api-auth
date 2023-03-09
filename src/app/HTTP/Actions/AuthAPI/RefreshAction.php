@@ -17,6 +17,8 @@ class RefreshAction extends BaseAPIAction
 
         $token = $user->createToken(config('alimwa-api-auth.tokens.name')); // @phpstan-ignore-line
 
+        $this->result['message'] = 'User Token Refreshed Successfully';
+
         $this->result['data'] = [
             'token' => $token->plainTextToken,
             'user' => $userModel::find(request()->user()->getAuthIdentifier())->toArray(),

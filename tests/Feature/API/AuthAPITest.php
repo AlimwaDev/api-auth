@@ -23,7 +23,7 @@ class AuthAPITest extends BaseTestCase
 				$credential
 			);
 
-			$response->assertStatus(201);
+			$response->assertStatus(200);
 		}
     }
 
@@ -59,7 +59,7 @@ class AuthAPITest extends BaseTestCase
 	{
 		$response = $this->withAuthUser()->getJson($this->getFullAPIEndpoint('/refresh'));
 
-		$response->assertStatus(201);
+		$response->assertStatus(200);
 	}
 
 	/**
@@ -87,7 +87,7 @@ class AuthAPITest extends BaseTestCase
 	{
 		$response = $this->withAuthUser()->getJson($this->getFullAPIEndpoint('/user'));
 
-		$response->assertStatus(201);
+		$response->assertStatus(200);
 	}
 
 	/**
@@ -115,7 +115,7 @@ class AuthAPITest extends BaseTestCase
 	{
 		$response = $this->withAuthUser()->getJson($this->getFullAPIEndpoint('/logout'));
 
-		$response->assertStatus(201);
+		$response->assertStatus(200);
 	}
 
 	/**

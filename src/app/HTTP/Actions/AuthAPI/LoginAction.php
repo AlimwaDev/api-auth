@@ -22,12 +22,16 @@ class LoginAction extends BaseAPIAction
 
             $token = $user->createToken(config('alimwa-api-auth.tokens.name'));
 
+            $this->result['message'] = 'User Logged In Successfully';
+
             $this->result['data'] = [
                 'token' => $token->plainTextToken,
                 'user' => $user->toArray(),
             ];
         } else {
             $this->result['message'] = 'Invalid Credentials';
+
+            $this->result['success'] = false;
 
             $this->code = 401;
         }
