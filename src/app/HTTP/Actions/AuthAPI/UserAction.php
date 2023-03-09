@@ -11,9 +11,12 @@ class UserAction extends BaseAPIAction
     {
         $userModel = App::make(config('alimwa-api-auth.model'));
 
+        $this->result['message'] = 'Current User Retrieved Successfully';
+
         $this->result['data'] = [
             'user' => $userModel::find(request()->user()->getAuthIdentifier())->toArray(),
         ];
+
         return $this;
     }
 }
